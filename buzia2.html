@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	</head>
+	<body>
+		<canvas id="plansza_rysowania" width="500px" height="300px"></canvas>
+		
+		<script>
+			let plansza, rysowanie;
+			plansza = document.getElementById("plansza_rysowania");
+			rysowanie = plansza.getContext("2d"); 
+			
+			function RysujPlansze() 
+			{
+				rysowanie.fillStyle = "rgb(0,0,0)"; 
+				rysowanie.fillRect(0,0, plansza.width,plansza.height);
+			}
+			function RysujProstokat(x_od_kad, y_od_kad, x_do_kad, y_do_kad, kolor)
+			{
+				rysowanie.fillStyle = kolor;
+				rysowanie.fillRect(x_od_kad, y_od_kad, x_do_kad, y_do_kad);
+			}
+			RysujPlansze();
+			RysujProstokat(30, 25, 450, 250, "red");
+			RysujProstokat(80, 75, 70, 70, "blue");
+			RysujProstokat(350, 75, 70, 70, "blue");
+			RysujProstokat(155, 200, 185, 30, "yellow");
+		</script>
+	</body>
+</html>
